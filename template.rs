@@ -1,7 +1,15 @@
+// ##############
+// ### PART 1 ###
+// ##############
+
 fn part1() -> u32 {
     let _input = parse_input();
     0
 }
+
+// ##############
+// ### PART 2 ###
+// ##############
 
 fn part2() -> u32 {
     let _input = parse_input();
@@ -13,18 +21,26 @@ fn parse_input() -> Vec<()> {
 
     peg::parser! {
         grammar parser() for str {
-            pub(crate) rule input() -> Vec<()>
+            pub(crate) rule parse() -> Vec<()>
                 = "TODO" { todo!() }
         }
     }
 
-    parser::input(input).unwrap()
+    parser::parse(input).unwrap()
 }
+
+// ############
+// ### MAIN ###
+// ############
 
 fn main() {
     println!("{}", part1());
     println!("{}", part2());
 }
+
+// #############
+// ### TESTS ###
+// #############
 
 #[cfg(test)]
 mod tests {
